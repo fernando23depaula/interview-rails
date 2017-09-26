@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @lead.name
+%p
+  %b Email:
+  = @lead.email
+%p
+  %b Zip code:
+  = @lead.zip_code
+%p
+  %b State:
+  = @lead.state
+%p
+  %b City:
+  = @lead.city
+%p
+  %b Street address:
+  = @lead.street_address
+%p
+  %b Street number:
+  = @lead.street_number
+%p
+  %b Phone:
+  = @lead.phone
+%p
+  %b Cellular:
+  = @lead.cellular
+%p
+  %b Tax:
+  = @lead.tax_id
+%p
+  %b Birth date:
+  = @lead.birth_date
+
+= link_to 'Edit', edit_lead_path(@lead)
+\|
+= link_to 'Back', leads_path

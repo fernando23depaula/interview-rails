@@ -1,0 +1,41 @@
+%h1 Listing leads
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Zip code
+      %th State
+      %th City
+      %th Street address
+      %th Street number
+      %th Phone
+      %th Cellular
+      %th Tax
+      %th Birth date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @leads.each do |lead|
+      %tr
+        %td= lead.name
+        %td= lead.email
+        %td= lead.zip_code
+        %td= lead.state
+        %td= lead.city
+        %td= lead.street_address
+        %td= lead.street_number
+        %td= lead.phone
+        %td= lead.cellular
+        %td= lead.tax_id
+        %td= lead.birth_date
+        %td= link_to 'Show', lead
+        %td= link_to 'Edit', edit_lead_path(lead)
+        %td= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Lead', new_lead_path
