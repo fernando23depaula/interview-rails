@@ -1,41 +1,56 @@
-%h1 Listing leads
+%div#container_formulario.mx-auto.col-sm-12
+  %div{:class=>''}
+    %p Empresa
+    %h3
+      Localize Caminhoneiros e contrate online
+    %p
+      Mais de 553 mil caminhoneiros baixaram o app TruckPad em todo o Brasil.
+    %p
+      Experimente, encontre Caminhoneiros no mapa!
+    %form{:action => "",:id=>'localizarCaminhoes',:class=>'row'}
+      .col-sm-6
+        %div.form-group
+          %label 
+            Local de origem
+          %select{:type=>"text",:class=>"form-control",:id=>'paisOrigem'}
+            %option{:value => "Brasil-Origem"} Brasil
+            %option{:value => "Argentina-Origem"} Argentina
+            %option{:value => "Colombia-Origem"} Colombia
+            %option{:value => "Mexico-Origem"} Mexico
+            %option{:value => "Chile-Origem"} Chile
+            %option{:value => "Paraguai-Origem"} Paraguai
+            %option{:value => "Uruguai-Origem"} Uruguai
+            %option{:value => "Venezuela-Origem"} Venezuela
+        %div.form-group
+          %label 
+            Local de destino
+          %select{:type=>"text",:class=>"form-control",:id=>'paisDestino'}
+            %option{:value => "Brasil-Destino"} Brasil
+            %option{:value => "Argentina-Destino"} Argentina
+            %option{:value => "Colombia-Destino"} Colombia
+            %option{:value => "Mexico-Destino"} Mexico
+            %option{:value => "Chile-Destino"} Chile
+            %option{:value => "Paraguai-Destino"} Paraguai
+            %option{:value => "Uruguai-Destino"} Uruguai
+            %option{:value => "Venezuela-Destino"} Venezuela
+      .col-sm-6
+        %div.form-group
+          %label 
+            Cidade Origem
+          %select{:type=>"text",:class=>"form-control",:id=>'cidadeOrigem'}
+            %option{:value => ""}
+            %option{:value => "São-Paulo"} São Paulo
+            %option{:value => "Rio-de-Janeiro"} Rio de Janeiro
+        %div.form-group
+          %label 
+            Cidade destino
+          %select{:type=>"text",:class=>"form-control",:id=>'cidadeDestino'}
+            %option{:value => ""}
+            %option{:value => "São-Paulo-dest"} São Paulo
+            %option{:value => "Rio-de-Janeiro-dest"} Rio de Janeiro
+      .container-fluid
+        .float-right
+          %a{:href=>'/leads/new',:class=>"btn bg-info rounded mx-auto"}Cadastre sua empresa
+          %button{:class=>'rounded btn  btn-success mx-auto', :type=>'button',:id=>'localizarButtonForm'}
+            Localizar caminhoneiros
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Email
-      %th Zip code
-      %th State
-      %th City
-      %th Street address
-      %th Street number
-      %th Phone
-      %th Cellular
-      %th Tax
-      %th Birth date
-      %th
-      %th
-      %th
-
-  %tbody
-    - @leads.each do |lead|
-      %tr
-        %td= lead.name
-        %td= lead.email
-        %td= lead.zip_code
-        %td= lead.state
-        %td= lead.city
-        %td= lead.street_address
-        %td= lead.street_number
-        %td= lead.phone
-        %td= lead.cellular
-        %td= lead.tax_id
-        %td= lead.birth_date
-        %td= link_to 'Show', lead
-        %td= link_to 'Edit', edit_lead_path(lead)
-        %td= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Lead', new_lead_path

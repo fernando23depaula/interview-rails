@@ -1,43 +1,47 @@
 = form_for @lead do |f|
   - if @lead.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@lead.errors.count, "error")} prohibited this lead from being saved:"
+      %h2.container= "#{pluralize(@lead.errors.count, "error")} prohibited this lead from being saved:"
       %ul
         - @lead.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :zip_code
-    = f.text_field :zip_code
-  .field
-    = f.label :state
-    = f.text_field :state
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :street_address
-    = f.text_field :street_address
-  .field
-    = f.label :street_number
-    = f.text_field :street_number
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.label :cellular
-    = f.text_field :cellular
-  .field
-    = f.label :tax_id
-    = f.text_field :tax_id
-  .field
-    = f.label :birth_date
-    = f.date_select :birth_date
-  .actions
-    = f.submit 'Save'
+  .row.container.mx-auto#containerCadastro
+    .form-group.col-sm-4
+      = f.label :name
+      = f.text_field :name,:class=>"form-control require"
+    .form-group.col-sm-4
+      = f.label :email
+      = f.text_field :email,:class=>"form-control",:type=>'email'
+    .form-group.col-sm-4
+      = f.label :zip_code
+      = f.text_field :zip_code,:class=>"form-control require",:id=>'entradaCEP'
+      %div#errorCEP{:class=>"text-danger erros"}
+        Erro. Favor preencha corretamente.
+    .form-group.col-sm-4
+      = f.label :state
+      = f.text_field :state,:class=>"form-control require",:id=>"estadoInput"
+    .form-group.col-sm-4
+      = f.label :city
+      = f.text_field :city,:class=>"form-control require",:id=>"cidadeInput"
+    .form-group.col-sm-4
+      = f.label :street_address
+      = f.text_field :street_address,:class=>"form-control require",:id=>"ruaInput"
+    .form-group.col-sm-4
+      = f.label :street_number
+      = f.text_field :street_number,:class=>"form-control require",:id=>"numeroRuaInput"
+    .form-group.col-sm-4
+      = f.label :phone
+      = f.text_field :phone,:class=>"form-control require",:id=>"telefoneInput"
+      %div#errorTelefone{:class=>"text-danger erros"}
+        Erro. Favor preencha corretamente.
+    .form-group.col-sm-4
+      = f.label :cellular
+      = f.text_field :cellular,:class=>"form-control",:id=>"celularInput"
+    .form-group.col-sm-4
+      = f.label :tax_id
+      = f.text_field :tax_id,:class=>"form-control"
+    .form-group.col-sm-4
+      = f.label :birth_date
+      = f.date_select :birth_date,:class=>"form-control"
+    .actions.form-group.col-sm-4
+      = f.submit 'Save',:class=>'btn btn-success',:type=>'button',:id=>"enviar"
