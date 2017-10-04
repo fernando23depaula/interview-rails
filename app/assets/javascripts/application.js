@@ -12,7 +12,6 @@
 //
 
 
-//= require javascripts/scriptsApp
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

@@ -1,38 +1,68 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @lead.name
-%p
-  %b Email:
-  = @lead.email
-%p
-  %b Zip code:
-  = @lead.zip_code
-%p
-  %b State:
-  = @lead.state
-%p
-  %b City:
-  = @lead.city
-%p
-  %b Street address:
-  = @lead.street_address
-%p
-  %b Street number:
-  = @lead.street_number
-%p
-  %b Phone:
-  = @lead.phone
-%p
-  %b Cellular:
-  = @lead.cellular
-%p
-  %b Tax:
-  = @lead.tax_id
-%p
-  %b Birth date:
-  = @lead.birth_date
+.container
+  %table.table
+    %tr
+      %td
+        %b Name:
+      %td
+        = @lead.name
+    %tr
+      %td
+        %b Email:
+      %td
+        = @lead.email
+    %tr
+      %td
+        %b Zip code:
+      %td
+        = @lead.zip_code
+    %tr
+      %td
+        %b 
+          State:
+      %td
+        = @lead.state
+    %tr
+      %td
+        %b 
+          City:
+      %td
+        = @lead.city
+    %tr
+      %td
+        %b 
+          Street address:
+      %td
+        = @lead.street_address
+    %tr
+      %td
+        %b 
+          Street number:
+      %td
+        = @lead.street_number
+    %tr
+      %td
+        %b 
+          Phone:
+      %td
+        = @lead.phone
+    %tr
+      %td
+        %b 
+          Cellular:
+      %td
+        = @lead.cellular
+    %tr
+      %td
+        %b 
+          Tax:
+      %td
+        = @lead.tax_id
+    %tr
+      %td
+        %b 
+          Birth date:
+      %td
+        = @lead.birth_date
 
 = link_to 'Edit', edit_lead_path(@lead)
 \|

@@ -8,40 +8,47 @@
   .row.container.mx-auto#containerCadastro
     .form-group.col-sm-4
       = f.label :name
-      = f.text_field :name,:class=>"form-control require"
+      = f.text_field :name,:class=>"form-control requireMinimoCaracterInput",:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
     .form-group.col-sm-4
       = f.label :email
-      = f.text_field :email,:class=>"form-control",:type=>'email'
+      = f.text_field :email,:class=>"form-control requireMinimoCaracterInput",:type=>'email',:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
     .form-group.col-sm-4
       = f.label :zip_code
-      = f.text_field :zip_code,:class=>"form-control require",:id=>'entradaCEP'
+      = f.text_field :zip_code,:class=>"form-control requireMinimoCaracterInput",:id=>'entradaCEP',:pattern=>"[0-9]{5}-[0-9]{3}",:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
       %div#errorCEP{:class=>"text-danger erros"}
         Erro. Favor preencha corretamente.
     .form-group.col-sm-4
       = f.label :state
-      = f.text_field :state,:class=>"form-control require",:id=>"estadoInput"
+      = f.text_field :state,:class=>"form-control requireMinimoCaracterInput",:id=>"estadoInput",:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
     .form-group.col-sm-4
       = f.label :city
-      = f.text_field :city,:class=>"form-control require",:id=>"cidadeInput"
+      = f.text_field :city,:class=>"form-control requireMinimoCaracterInput",:id=>"cidadeInput",:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
     .form-group.col-sm-4
       = f.label :street_address
-      = f.text_field :street_address,:class=>"form-control require",:id=>"ruaInput"
+      = f.text_field :street_address,:class=>"form-control requireMinimoCaracterInput",:id=>"ruaInput",:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
     .form-group.col-sm-4
       = f.label :street_number
-      = f.text_field :street_number,:class=>"form-control require",:id=>"numeroRuaInput"
+      = f.text_field :street_number,:class=>"form-control requireMinimoCaracterInput",:id=>"numeroRuaInput",:required=>'true'
+      %div#errorTelefone{:class=>"text-danger erros"}
     .form-group.col-sm-4
       = f.label :phone
-      = f.text_field :phone,:class=>"form-control require",:id=>"telefoneInput"
+      = f.text_field :phone,:class=>"form-control requireMinimoCaracterInput",:id=>"telefoneInput",:pattern=>"[0-9]{2}[0-9]{4}[0-9]{4}",:required=>'true'
       %div#errorTelefone{:class=>"text-danger erros"}
         Erro. Favor preencha corretamente.
     .form-group.col-sm-4
       = f.label :cellular
-      = f.text_field :cellular,:class=>"form-control",:id=>"celularInput"
+      = f.text_field :cellular,:class=>"form-control requireMinimoCaracterInput",:id=>"celularInput",:pattern=>"[0-9]{2}[0-9]{4}[0-9]{4,5}",:required=>'true'
     .form-group.col-sm-4
       = f.label :tax_id
-      = f.text_field :tax_id,:class=>"form-control"
+      = f.text_field :tax_id,:class=>"form-control requireMinimoCaracterInput",:required=>'true'
     .form-group.col-sm-4
       = f.label :birth_date
       = f.date_select :birth_date,:class=>"form-control"
     .actions.form-group.col-sm-4
-      = f.submit 'Save',:class=>'btn btn-success',:type=>'button',:id=>"enviar"
+      = f.submit 'Save',:class=>'btn btn-success',:type=>'submit',:id=>"enviar"
